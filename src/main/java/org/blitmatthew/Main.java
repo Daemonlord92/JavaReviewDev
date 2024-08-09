@@ -1,5 +1,7 @@
 package org.blitmatthew;
 
+import org.openjdk.jol.vm.VM;
+
 import java.util.*;
 import java.util.function.*;
 
@@ -141,7 +143,7 @@ public class Main {
 
         //ArrayDeque
 
-        ArrayDeque<String> arrayDeque = new ArrayDeque<>();
+        //ArrayDeque<String> arrayDeque = new ArrayDeque<>();
 //        arrayDeque.addFirst("Aboubieda");
 //        arrayDeque.addFirst("Syed");
 //        arrayDeque.addLast("Joesph");
@@ -261,18 +263,94 @@ public class Main {
 //        System.out.println(
 //        );
 //        System.out.println(map);
-        String name = "Bhavani";
+//        String name = "Bhavani";
+//
+//        System.out.println(removeVowels(name));
+        //String
+        //What is String in Java?
+        //Sequence of characters.
+//        String name = "Nazi";
+//        char letter = 'N'; //Char can only store one letter or Speacial Character
+//        Character letter2 = 'N';
+//
+//        //String Pool
+//        // is a spot within the Heap of the JVM that stores the String Objects
+//        //Strings Immutable
+//        //When one string object value is the same with multiple variables they will point to the same object.
+//
+//        String example = "Bruce";
+//
+//        System.out.println(name.hashCode());
+//        System.out.println(example.hashCode());
+//
+//        String newString = name + " " + example;
+//
+//        System.out.println(newString.hashCode());
+//
+//        System.out.println(newString);
+//
+//        System.out.println(name.concat(" ").concat(example));
+//
+//        System.out.println(name.equals(example));
+//
+//        String name2 = new String("Nazi");
+//
+//        System.out.println();
+//        System.out.println();
+////        System.out.println(VM.current().addressOf(name));
+////        System.out.println(VM.current().addressOf(name2));
+//
+//        char[] chars = {'N'};
+//        //
+//        System.out.println(name.contains("N"));
+//        System.out.println(name.contains("J"));
+//        //                01234567
+//        String sentence = "you're trying to say you like dos\n" +
+//                "better than me, right?";
+//
+//        //Bearer
+//        // JSON Web Token
+//
+//        System.out.println(sentence.substring(0, 7));
+//
+//        String c1 = "I";
+//        String c2 = "Love";
+//        String c3 = "Java";
+//        System.out.println(String.join(" ", c1, c2, c3));
+//        c2.replace('L', 'l');
+//        c3.replace('J', 'j');
+//        System.out.println(String.join(" ", c1, c2.replace('L', 'l'), c3.replace('J', 'j')));
+//
+//        String newSentence = "Java123is456fun";
+//        System.out.println(newSentence.replaceAll("\\d+", " "));
+//
+//        System.out.println();
+//        System.out.println(removeVowels(newSentence));
+        StringBuilder sb = new StringBuilder();
+        sb.append("love");
+        sb.insert(0, "I");
 
-        System.out.println(removeVowels(name));
+        sb.delete(0, 1);
+        System.out.println(sb.toString());
+        System.out.println(sb.reverse().toString());
+        StringBuffer sb1 = new StringBuffer("love");
     }
 
     public static String removeVowels(String string){
+        /*
+         * first step: need to establish to java what the vowels are.
+         * second step: need to break the string apart
+         * third step: iterate through the broken string and compare if a vowel
+         * four step: add letter if it's not a vowel.
+         */
+
+
         String vowel = "AEIOUaeiou";
         char[] stringArr = string.toCharArray();
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < stringArr.length; i++) {
-            if(vowel.indexOf(stringArr[i]) == -1){
-                sb.append(stringArr[i]);
+        for (char c : stringArr) {
+            if (vowel.indexOf(c) == -1) {
+                sb.append(c);
             }
         }
 
